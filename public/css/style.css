@@ -1,0 +1,37 @@
+.cars {
+    margin-top: 70px;
+}
+
+.car {
+    width: 400px;
+    height: 400px;
+    margin: 10px auto;
+    border: 1px solid black;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.car h1,
+.car h4 {
+    text-align: center;
+}
+.car img {
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: cursive;
+}
+
+nav ul li a {
+    text-decoration: none;
+}
