@@ -4,6 +4,10 @@ import { fileURLToPath } from 'url';
 import express from 'express';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
+import jwt from 'jsonwebtoken';
+
+import userRoutes from './routes/user.js';
+import carRoutes from './routes/car.js';
 
 // configure dotenv
 dotenv.config();
@@ -28,12 +32,27 @@ app.use(cookieParser());
 // serve static folder
 app.use(express.static(path.join(PATH, 'public')));
 
+app.use((req, res, next) => {
+    const token = req.cookies.token;
+    if(token) {
+        jwt.verify(token, process.env.TOKEN_ACCESS_SECRET, (err, data) => {
+            if(data) {
+                req.body.user = data;
+            }
+            next();
+        });
+    }
+    next();
+})
+
 // use routes
+app.use(userRoutes);
+app.use(carRoutes);
 
 // handle 404
 app.use('*', (req, res) => {
     res.status(404).render('404', {
-        title: 'Page not found',
+        title: 'Page is not found',
         message: `This page doesn't exist`
     });
 });

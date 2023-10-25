@@ -1,37 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Marvel:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(21, 21, 21);
+    font-family: 'Marvel', sans-serif;
+    color: rgba(253, 57, 132, 0.881);
+    letter-spacing: .1rem;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(transparent, #fa38d0);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(transparent, #cacaca);
+}
+
+.video-bg {
+    display: block;
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    background: url("../assets/car-slow.mp4") center/cover fixed;
+    z-index: -1;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 28px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.video-bg {
+    width: 100%;
+}
+
+.video::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 119vh;
+    background-color: rgba(0, 0, 0, 0.364);
+}
+
+.title {
+    position: absolute;
+    top: 10rem;
+    left: 8rem;
+    font-size: 3rem;
+    color: white;
+}
+
+.subtitle {
+    position: absolute;
+    top: 15rem;
+    left: 13rem;
+    font-size: 2rem;
+    color: white;
+}
+
 .cars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     margin-top: 70px;
+    gap: 2rem;
 }
 
 .car {
+    position: relative;
+    top: 50rem;
     width: 400px;
     height: 400px;
-    margin: 10px auto;
-    border: 1px solid black;
+    padding: 1rem;
     border-radius: 8px;
     margin-top: 20px;
     margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.car h1 {
+    font-size: 1.8rem;
 }
 
 .car h1,
-.car h4 {
+.car h2 {
     text-align: center;
+    margin-top: 1rem;
 }
+
+.car h2 {
+    font-size: 1.3rem;
+}
+
+.car-img {
+    display: flex;
+    align-items: center;
+    height: 70%;
+}
+
 .car img {
+    margin-top: 2rem;
     width: 100%;
+
+}
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    font-size: 1.2rem;
+}
+
+.add-car-form,
+.register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    padding: 2rem;
+    width: 25rem;
+    height: 22rem;
+    background-color: rgba(0, 0, 0, 0.092);
+    border-radius: 20px;
+}
+
+.title {
+    margin-bottom: 1rem;
+    letter-spacing: 0.3rem;
+}
+
+input {
+    width: 100%;
+    padding: 5px 20px;
+    border-radius: 8px;
+    background-color: rgb(36, 36, 36);
+    font-size: 1.2rem;
+    color: white;
+    border: 1px solid rgb(108, 108, 108);
+    outline: none;
+    caret-color: rgba(253, 57, 132, 0.881);
+}
+
+button {
+    width: 70%;
+    height: 2.5rem;
+    padding: 5px 20px;
+    margin-top: 0.6rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    background-color: rgba(248, 105, 160, 0.817);
+    font-family: 'Marvel', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: white;
+    border: none;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: right;
+    background-color: rgba(0, 0, 0, 0.477);
+    padding: 1.5rem;
+    gap: 3rem;
 }
 
 nav ul li {
     font-size: 20px;
     font-weight: 700;
-    font-family: cursive;
 }
 
-nav ul li a {
+a {
+    color: rgba(249, 204, 221, 0.881);
     text-decoration: none;
+}
+
+.message-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    height: 100vh;
 }

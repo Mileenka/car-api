@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Add Car</title>
+</head>
+<body>
+    <div class="form">
+        <form class="add-car-form" action="/add-car" method="POST">
+            <label for="model">Model</label>
+            <input type="text" name="model" id="model">
+            <label for="price">Price</label>
+            <input type="number" name="price" id="model" step="0.01">
+            <label for="model">Image</label>
+            <input type="url" name="img" id="img">
+            <button type="submit">Add car</button>
+        </form>
+    </div>
+    </body>
+</html>

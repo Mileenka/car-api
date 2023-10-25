@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Cars</title>
+</head>
+<body>
+    <%- include('./includes/nav.ejs') %>
+    <div class="video">
+        <h1 class="title">LuxuryWheels</h1>
+        <p class="subtitle">Prestige Motors Inc</p>
+        <video class="video-bg" src="/assets/car-slow.mp4" autoplay loop muted></video>
+    </div>
+    <div class="cars">
+        <% if(cars.length > 0) { %> <%  cars.forEach((car) => {  %>
+            <div class="car">
+                <h1><%= car.model %></h1>
+                <div class="car-img"><img src="<%= car.img %>" alt="<%= car.model %>"></div>
+                <h2>$<%= car.price %></h2>
+            </div>
+        <% }) %> <% } else { %>
+            <p>Car doesn't exist</p>
+            <% } %>
+    </div>
+</body>
+</html>
